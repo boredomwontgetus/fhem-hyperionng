@@ -175,10 +175,8 @@ sub HyperionNG_ReadComponents($$) {
         my %onoffmap = (0 => "off", 1 => "on");
 	
 	my $data = $obj;
-        print Dumper($data);
         if (ref($data) eq 'ARRAY') {
                  foreach my $e (@$data) {
-                   print Dumper($e);
                    $compstate = $data->[0]->{enabled};
                    $compname = $data->[0]->{name};
                    readingsBeginUpdate($hash);
