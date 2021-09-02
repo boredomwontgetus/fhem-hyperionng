@@ -683,7 +683,6 @@ sub HyperionNG_Set($@)
   $HyperionNG_sets_local{adjustID} = "textField";
   $HyperionNG_sets_local{source} = "textField";
   $HyperionNG_sets_local{autoselect} = "true,false";
-  $HyperionNG_sets_local{instance} = "textField";
   my $params = join(" ",map {"$_:$HyperionNG_sets_local{$_}"} keys %HyperionNG_sets_local);
   my %obj;
   Log3 $name,4,"$name: HyperionNG_Set cmd: $cmd";
