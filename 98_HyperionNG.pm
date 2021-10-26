@@ -421,7 +421,6 @@ sub HyperionNG_ReadAdjustment($$) {
 
 sub HyperionNG_ReadPriorities($$) {
 	my ($hash,$obj)  = @_;
-	my $componentId = '';
 	my $name    = $hash->{NAME};
 	# Return if no adjustment given
 	return if ((!defined $obj->{priorities}) && (!defined $obj->{priorities_autoselect}));
@@ -439,7 +438,7 @@ sub HyperionNG_ReadPriorities($$) {
 		
 		
 		# my $data = $obj->{priorities}->[0];
-		$componentId = $data->{componentId};
+		my $componentId = $data->{componentId} || "";
 		my $origin = $data->{origin};
 		my $priority = $data->{priority};
 		if (defined $data->{duration_ms}) {
